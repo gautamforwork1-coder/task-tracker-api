@@ -1,9 +1,6 @@
 package com.gautam.task_tracker.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -12,7 +9,8 @@ import java.time.LocalDate;
 @Table(name = "tasks")
 @Data
 public class Task {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
